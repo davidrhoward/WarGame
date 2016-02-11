@@ -88,8 +88,7 @@ public class warGame{
 				System.out.println("Your deck contains " +userDeck +" cards!");
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine();
-					if(endGame == terminate){
-					}
+
 			}
 			//If the computer wins the user's card is taken and then computer's card is added back to deck. Asked to play again. (Same situation)
 			else if (userCard < randomCard){
@@ -98,8 +97,7 @@ public class warGame{
 				System.out.println("Your opponenents deck contains " +cpuDeck + " cards!");
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine().toLowerCase();
-				if(endGame == terminate){
-				}
+
 			}
 			//Default. No card is taken from either deck.
 			else {
@@ -107,8 +105,7 @@ public class warGame{
 				System.out.println("Your opponent has " +cpuDeck +" cards!\n" +"You have "+ userDeck +" cards!");
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine().toLowerCase();
-				if(endGame == terminate){
-				}
+
 			}
 		}
 

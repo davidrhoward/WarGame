@@ -10,8 +10,9 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class warGame extends JPanel {
-
+public class warGame{
+	
+	//Instance Variables.
 	private static int userCard;
 	private static int randomCard; 
 	private static int userScore;
@@ -24,21 +25,11 @@ public class warGame extends JPanel {
 	
 	
 	public static void main (String [] args){
-		Scanner scan = new Scanner(System.in);
-		
 		System.out.println("Welcome to War!\n\n");
 		
-		cardsDrawn();
-		mathMethod();
-		
-		//System.out.println("Your card is: "+userCard);
-		//System.out.println("Your opponent's card is: "+randomCard);
-		
-		//GUI for Cards.
-		
+		//cardsDrawn();
+		//mathMethod();
 		//setValues();
-		
-		
 		//mathMethod();
 		
 		
@@ -77,13 +68,17 @@ public class warGame extends JPanel {
 	
 	//Determines who wins
 	public static void mathMethod(){
+		//Call scanner. 
 		Scanner scan = new Scanner(System.in);
+		//Call methods.
 		setValues();
 		cardsDrawn();
 		
+		//Printing cards for testing.
 		System.out.println("You: "+userCard);
 		System.out.println("Cpu: "+randomCard);
 		
+		//While loop. As long as computer deck/user deck isn't 0 game will continue. If the user selects no for play again. Game will terminate. 
 		while (cpuDeck != 0 || userDeck != 0 || terminate.toLowerCase() != "no"){
 			
 			//If the user wins his card and the opponents card are added to the user's deck. Then asked to play again. (currently doesn't work with scanning to ask to play again?)
@@ -96,6 +91,7 @@ public class warGame extends JPanel {
 					if(endGame == terminate){
 					}
 			}
+			//If the computer wins the user's card is taken and then computer's card is added back to deck. Asked to play again. (Same situation)
 			else if (userCard < randomCard){
 				System.out.println("CPU has won." +"\n-----------------------------------------------");
 				cpuDeck += 2;
@@ -105,6 +101,7 @@ public class warGame extends JPanel {
 				if(endGame == terminate){
 				}
 			}
+			//Default. No card is taken from either deck.
 			else {
 				System.out.println("You and your opponent have drawn.\n--------------------------------------------");
 				System.out.println("Your opponent has " +cpuDeck +" cards!\n" +"You have "+ userDeck +" cards!");

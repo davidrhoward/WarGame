@@ -84,28 +84,25 @@ public class warGame extends JPanel {
 		System.out.println("You: "+userCard);
 		System.out.println("Cpu: "+randomCard);
 		
-		while (cpuDeck != 0 || userDeck != 0){
+		while (cpuDeck != 0 || userDeck != 0 || terminate.toLowerCase() != "no"){
 			
+			//If the user wins his card and the opponents card are added to the user's deck. Then asked to play again. (currently doesn't work with scanning to ask to play again?)
 			if (userCard > randomCard){
 				System.out.println("You have won." +"\n-----------------------------------------------");
 				userDeck += 2;
 				System.out.println("Your deck contains " +userDeck +" cards!");
-				userScore ++;
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine();
 					if(endGame == terminate){
-						break;
 					}
 			}
 			else if (userCard < randomCard){
 				System.out.println("CPU has won." +"\n-----------------------------------------------");
 				cpuDeck += 2;
 				System.out.println("Your opponenents deck contains " +cpuDeck + " cards!");
-				opponentScore ++;
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine().toLowerCase();
 				if(endGame == terminate){
-					break;
 				}
 			}
 			else {
@@ -114,7 +111,6 @@ public class warGame extends JPanel {
 				System.out.println("Would you like to play again?");
 				endGame = scan.nextLine().toLowerCase();
 				if(endGame == terminate){
-					break;
 				}
 			}
 		}
